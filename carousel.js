@@ -1,3 +1,6 @@
+$(document).ready(function(){
+})
+
 $(function fetchSmileQuoteApi () {
   $('.loader').show();
 
@@ -12,8 +15,9 @@ $(function fetchSmileQuoteApi () {
       dataType: 'json',
       timeout: 10000,
       success: function (data) {
-        $('.loader').hide();
+
         $('.smiling-man').show();
+        $('.loader').hide();
 
 
         $.each(data, function (i, item) {
@@ -43,25 +47,43 @@ function slick_single_quote () {
     });
   }
 
-function multiple_qutoe() {
-  $
+let cardIndex = 0;
+
+$(function multiple_quote() {
+  $.ajax({
+    url: "https://smileschool-api.hbtn.info/popular-tutorials",
+    type: 'GET',
+    data: 'json',
+    success: function(data){
+
+  $('.loader').hide()
+  $('.smiling-man').show();
+
+      $.each(data, function(i, item){
+        // string = item.sub-title
+        // console.log(string)
+        // console.log(item.star)
+        if (i < 4 ) {
+          let card =$('.card').eq(i);
+          card.find('.video_image').attr('src', item.thumb_url);
+          card.find('.card-title').text(`${item.title}`);
+          card.find('.card-text').text(`${item.sub-title}`);
+          card.find('.author-pic').attr('src', item.author_pic_url);
+          card.find('.author-name').text(`${item.author}`);
+          card.find('.duration').text(`${item.duration}`);
+
+          let stars = numberToArray(item.star)
+
+          for(let star of stars){
+            console.log(star)
+          }
+        }
+      });
+    }
+  });
+
+});
+
+function numberToArray(num) {
+  return Array.from({length: num}, (_, i) => i);
 }
-
-$.ajax({
-  url: "https://smileschool-api.hbtn.info/popular-tutorials",
-  type: 'GET',
-  data: 'json',
-  success: function(data){
-    $.each(data, function(i, item){
-      if (i === 0 ) {
-        $('#thumb_url_0').attr('src', item.thumb_url);
-        $('#title_0').text(`${item.title}`);
-        $('#sub-title_0').text(`${item.sub-title}`);
-        $('#author-pic_0').attr('src', item.author_pic_url);
-        $('#author_0').text(`${item.author}`)
-        $('#duration_0').text(`${item.duration}`)
-
-      }
-    })
-  }
-})
