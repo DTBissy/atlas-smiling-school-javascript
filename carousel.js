@@ -50,6 +50,9 @@ function slick_single_quote () {
 let cardIndex = 0;
 
 $(function multiple_quote() {
+
+
+
   $.ajax({
     url: "https://smileschool-api.hbtn.info/popular-tutorials",
     type: 'GET',
@@ -71,14 +74,11 @@ $(function multiple_quote() {
           card.find('.author-pic').attr('src', item.author_pic_url);
           card.find('.author-name').text(`${item.author}`);
           card.find('.duration').text(`${item.duration}`);
+          $('card').css('width', '0')
 
-          let stars = numberToArray(item.star)
-
-          for(let star of stars){
-            console.log(star)
-          }
         }
       });
+      slick_multiple()
     }
   });
 
@@ -87,3 +87,42 @@ $(function multiple_quote() {
 function numberToArray(num) {
   return Array.from({length: num}, (_, i) => i);
 }
+
+function slick_multiple() {
+  $('.mpt').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    dots: true,
+    cssEase: 'linear',
+    speed: 300,
+    centerMode: false,
+    variableWidth: true,
+    adaptiveHeight: false,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+})};
