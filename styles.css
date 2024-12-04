@@ -341,7 +341,7 @@ margin: auto;
 
 /* POPULAR SECTION  */
 
-.mpt-h1 {
+#mpt-h1 {
   display: flex;
   justify-content: center;
   margin-top: 87px;
@@ -350,7 +350,7 @@ margin: auto;
   font-weight: 100;
 }
 
-.mpt {
+#mpt {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -361,7 +361,8 @@ margin: auto;
 }
 
 
-.mpt .card img {
+
+#mpt .card img {
   display: flex;
   justify-content: center;
   height: auto;
@@ -369,36 +370,36 @@ margin: auto;
   max-width: 255px;
 }
 
-.mpt .card .video_image {
+#mpt .card .video_image {
   left: auto;
 }
 
-.mpt .card {
+#mpt .card {
   display: flex;
   flex-direction: column;
   /* padding-left: 1rem;
   padding-right: 1rem; */
-  width: 255px;
+  width: 62%;
   height: 355px;
 
 
 }
 
 /* Directly affects the paragraph in the .card and not anything else*/
-/* .mpt .card :not(img) {
+/* #mpt .card :not(img) {
   margin-top: 0;
   padding-left: .5rem;
   padding-right: .5rem;
 } */
 
-.mpt .card h2 {
+#mpt .card h2 {
   color: #071629;
   font-size: 16px;
   font-family: 'Source-sans-pro-Bold';
   padding-left: 13px;
 }
 
-.mpt .card .prof h3 {
+#mpt .card .prof h3 {
   color: #C271FF;
   font-size: 14px;
   font-weight: 600;
@@ -408,19 +409,19 @@ margin: auto;
 
 }
 
-.mpt .card .prof {
+#mpt .card .prof {
   display: flex;
   padding-bottom: 1rem;
 }
 
-.mpt .card .prof img {
+#mpt .card .prof img {
   border-radius: 30px;
   max-height: 30px;
   max-width: 30px;
   margin-left: 13px;
 }
 
-.mpt .card .stars {
+#mpt .card .stars {
   display: flex;
   flex-direction: row;
   margin-left: auto;
@@ -428,7 +429,7 @@ margin: auto;
   padding-left: 13px;
 }
 
-.mpt .card div .stars img {
+#mpt .card div .stars img {
   width: 14px;
   height: 100%;
   max-width: 1rem;
@@ -436,7 +437,7 @@ margin: auto;
   padding-right: .25rem;
 }
 
-.mpt .card div .stars p {
+#mpt .card div .stars p {
   display: flex;
   flex-direction: row;
   margin-left: auto;
@@ -449,7 +450,7 @@ margin: auto;
 }
 
 
-.mpt p {
+#mpt p {
   color: black;
   font-size: 14px;
   display: flex;
@@ -480,14 +481,14 @@ margin: auto;
 
 
 
-/* .mpt-videos {
+/* #mpt-videos {
   display: flex;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
 } */
 
-.mpt-h1 b {
+#mpt-h1 b {
   color: #C271FF;
   font-family: 'Source-sans-pro-Bold';
   font-weight: 800;
@@ -627,6 +628,10 @@ margin: auto;
   .smile3 {
     padding-bottom: 50px;
   }
+}
+/*Lates Videos*/
+.info {
+
 }
 
 /* Footer  */
