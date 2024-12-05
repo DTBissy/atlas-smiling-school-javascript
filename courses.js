@@ -35,8 +35,8 @@ function fetchCourses() {
   const container = document.getElementById('API');
 
   const searchValue = $('#keywords').val();
-  const topic = $('#topic-dropdown').text() === $('#topic-selected').text();
-  const sort = $('#sort-dropdown').text() === $('#sort-selected').text();
+  const topic = $('#topic-dropdown').text();
+  const sort = $('#sort-dropdown').text();
 
   $('#loader').show();
   $('#API').empty();
