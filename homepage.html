@@ -37,7 +37,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <!--Custom Javacript-->
 
-  <script src="carousel.js"></script>
+  <script src="courses.js"></script>
 </head>
 
 <body class="body">
@@ -147,10 +147,17 @@
 
     <!--Most pop sections-->
     <section>
-      <div class="mpt-h1 text-center display-3">Hello
-        <div class="loader"></div>
-        <div id="mpt" class="d-flex flex-row align-items-center"></div>
+      <div class="mpt-h1 text-center display-3">Hello</div>
+
+
+      <div id="mpt_slide" class="d-flex flex-row align-items-center"></div>
+      <div class="loader"></div>
+
+      <div id="mpt" style="display: block;">
+
+
       </div>
+
     </section>
     <!--SMiles Section-->
     <section class="smiles section">
@@ -196,14 +203,16 @@
       </div>
     </section>
     <!--Latest News-->
-    <section class="popular section d-flex align-items-center">
+    <section>
       <div class="container">
         <header class="section-header">
-          <h2 class="text-center">
+          <h2 class="text-center latest_h2">
             <span class="main-color">Latest</span> videos
           </h2>
         </header>
-        <div id="latest_vids" class="">
+        <div class="loader"></div>
+        <div id="latest_slides" class="d-flex flex-row align-items-center"></div>
+        <div id="latest_vids" style="display: block;">
         </div>
     </section>
   </main>

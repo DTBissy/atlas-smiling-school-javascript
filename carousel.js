@@ -63,13 +63,13 @@ $(function multiple_quote() {
 
 
       data.forEach(item => {
-        const newHTML = `<div class="mpt_slide">
-        <div class="card" >
+        const newHTML = `
+        <div class="card" style="left: 25%;" >
       <div class="thumbnail">
         <img alt="Video" class="video_image" src="${item.thumb_url}"> <img class="overlay" src="images/play.png" alt="play_button">
       </div>
-      <h2 class="card-title">${item.title}</h2>
-      <p class="card-text">${item['sub-title']}</p>
+      <h2 class="card-title text-left">${item.title}</h2>
+      <p class="card-text text-left">${item['sub-title']}</p>
       <div class="prof"><img class="author-pic" src="${item.author_pic_url}">
         <h3 class="author-name">${item.author}</h3>
       </div>
@@ -78,7 +78,7 @@ $(function multiple_quote() {
           <p class="duration">${item.duration}</p>
         </div>
       </div>
-    </div>`;
+    `;
     container.innerHTML += newHTML;
       });
       slick_multiple_quotes();
@@ -102,38 +102,22 @@ $(function latest_videos() {
 
       data.forEach(item => {
         const html =
-       ` <div class="row align-items-center mx-auto">
-                <html div
-                  class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end justify-content-lg-center">
-                  <div class="card">
-                    <img src="${item.thumb_url}" class="card-img-top" alt="Video thumbnail" />
-                    <div class="card-img-overlay text-center">
-                      <img src="images/play.png" alt="Play" width="64px" class="align-self-center play-overlay" />
-                    </div>
-                    <div class="card-body">
-                        ${item.title}
-                      </h5>
-                      <p class="card-text text-muted">
-                        ${item['sub-title']}
-                      </p>
-                      <div class="creator d-flex align-items-center">
-                        <img src="${item.author_pic_url}" alt="Creator of
-                            Video" width="30px" class="rounded-circle" />
-                        <h6 class="pl-3 m-0 main-color">${item.author}</h6>
-                      </div>
-                      <div class="info pt-3 d-flex justify-content-between">
-                        <div class="rating row">
-                          <img src="images/star_on.png" alt="star on" width="15px" />
-                          <img src="images/star_on.png" alt="star on" width="15px" />
-                          <img src="images/star_on.png" alt="star on" width="15px" />
-                          <img src="images/star_on.png" alt="star on" width="15px" />
-                          <img src="images/star_off.png" alt="star on" width="15px" />
-                        </div>
-                        <span class="main-color">${item.duration}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
+       `
+                  <div class="card" style="left: 15%" >
+      <div class="thumbnail">
+        <img alt="Video" class="video_image" src="${item.thumb_url}"> <img class="overlay" src="images/play.png" alt="play_button">
+      </div>
+      <h2 class="card-title text-left">${item.title}</h2>
+      <p class="card-text text-left">${item['sub-title']}</p>
+      <div class="prof"><img class="author-pic" src="${item.author_pic_url}">
+        <h3 class="author-name">${item.author}</h3>
+      </div>
+      <div>
+        <div class="stars">
+          <p class="duration">${item.duration}</p>
+        </div>
+      </div>
+               `;
     container.innerHTML += html;
       });
   slick_multiple_latest_vids();
@@ -149,7 +133,7 @@ function numberToArray(num) {
 
 function slick_multiple_quotes() {
   $('#mpt').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     infinite: true,
     arrows: true,
@@ -188,7 +172,6 @@ function slick_multiple_latest_vids() {
   $('#latest_vids').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode:true,
     infinite: true,
     arrows: true,
 
@@ -197,30 +180,28 @@ function slick_multiple_latest_vids() {
     // variableWidth: true,
 
     responsive: [
-        {
-            breakpoint: 1024,
-            settings:
-            {
+      {
+          breakpoint: 1024,
+          settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
 
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
+          }
+      },
+      {
+          breakpoint: 600,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+          }
+      },
+      {
+          breakpoint: 480,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ]
 })};
