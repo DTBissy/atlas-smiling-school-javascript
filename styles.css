@@ -356,6 +356,9 @@ bottom: -25%;
 }
 
 /* POPULAR SECTION  */
+.card {
+  border: none !important;
+}
 
 #mpt-h1 {
   display: flex;
